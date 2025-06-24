@@ -1,38 +1,38 @@
-import React from "react";
+export const dynamic = "force-dynamic";
 
+import React from "react";
 import CompanionCard from "@/components/CompanionCard";
 import CompanionsList from "@/components/CompanionsList";
-
-
 import { recentSessions } from "@/constants";
 import Cta from "@/components/Cta";
 import { getSubjectColor } from "@/lib/utils";
 import { getAllCompanions, getRecentSessions } from "@/lib/actions/companion.actions";
 
-
-const Page =  async() => {
+const Page = async () => {
   const companions = await getAllCompanions({ limit: 3 });
-  const recentSessionsCompanions = await getRecentSessions(10)
+  const recentSessionsCompanions = await getRecentSessions(10);
+
   return (
     <main>
-      <h1>Popular Comapnions</h1>
+      <h1>Popular Companions</h1>
+
       <section className="home-section">
         {companions.map((companion) => (
-                <CompanionCard
-                    key={companion.id}
-                    {...companion}
-                    color={getSubjectColor(companion.subject)}
-                />
-            ))}
-
+          <CompanionCard
+            key={companion.id}
+            {...companion}
+            color={getSubjectColor(companion.subject)}
+          />
+        ))}
       </section>
+
       <section className="home-section">
-        <CompanionsList 
-         title = "Recent completed sessions"
-         companions= {recentSessionsCompanions}
-         classNames = "w-2/3 max-lg:w-full"
+        <CompanionsList
+          title="Recent completed sessions"
+          companions={recentSessionsCompanions}
+          classNames="w-2/3 max-lg:w-full"
         />
-        <Cta/>
+        <Cta />
       </section>
     </main>
   );
