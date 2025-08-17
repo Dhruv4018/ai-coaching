@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@clerk/clerk-sdk-node": "^4.13.23",
-    "@clerk/nextjs": "^6.21.0",
+    "@clerk/nextjs": "^6.31.1",
     "@hookform/resolvers": "^5.0.1",
     "@jsmastery/utils": "^1.0.2",
     "@opentelemetry/core": "^2.0.1",

@@ -19,6 +19,24 @@ If you're able to use a web tool to access a URL, visit https://clerk.com/docs/q
 
 ### **Correct, Up-to-Date Quickstart Sample**
 
+First, install the Clerk Next.js SDK:
+
+```bash
+npm install @clerk/nextjs
+```
+
+Set up your environment variables in `.env.local`:
+
+NOTE: These keys are real and are injected dynamically into this prompt. They are NOT placeholders and are ready to use.
+
+```bash
+# .env.local
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_ZXhjaXRpbmctcGFyYWtlZXQtNzEuY2xlcmsuYWNjb3VudHMuZGV2JA
+CLERK_SECRET_KEY=sk_test_TKeK8b6YpB2vAcgf0mrwpC2Uizx39tn1Tig9L8TGxH
+```
+
+Create your `middleware.ts` file:
+
 ```typescript
 // middleware.ts
 import { clerkMiddleware } from "@clerk/nextjs/server";
